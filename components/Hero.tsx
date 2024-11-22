@@ -1,6 +1,19 @@
 import React from 'react'
 import Image from "next/image"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
+import { Input } from "@/components/ui/input"
+
 
 export default function Hero() {
   return (
@@ -13,10 +26,28 @@ export default function Hero() {
         <p className='text-[18px] lg:w-[580px]  md:pr-20 md:mt-0 mt-3 '>Discover a wide range of courses covering a variety of subjects, taught by expert instructors.</p>
         <div className="btn mt-10 flex gap-4">
         <Link href={"#courses"}>
-        <button  className='lg:w-[178px] md:w-[160px] h-[48px] py-[12px] px-[24px] bg-[#000000] text-[#FFFFFF] rounded-lg lg:text-[16px] md:text-[13px] ' >Start learning now</button>
+        
+        <Button className='lg:w-[178px] md:w-[160px] h-[48px]  md:py-[12px] md:px-[24px] lg:text-[16px] md:text-[13px] rounded-lg ' variant="default">Start learning now</Button>
                     </Link>
         <Link href={"#courses"}>
-        <button className='lg:w-[178px] md:w-[160px] h-[48px] py-[12px] px-[24px] border-[#000000] rounded-lg  text-[#000000] border-[1px] lg:text-[16px] md:text-[13px]  ' >Explore Courses</button>
+        <Drawer>
+  <DrawerTrigger className='lg:w-[178px] md:w-[160px] h-[48px] p-3 md:py-[12px] md:px-[24px] border-[#000000] rounded-lg  text-[#000000] border-[1px] lg:text-[16px] md:text-[13px]  '>Explore Courses</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Search Courses </DrawerTitle>
+      <DrawerDescription>This action cannot be undone.</DrawerDescription>
+    </DrawerHeader>
+    <Input className='border-2 w-[97%] ml-4 border-black' />
+
+    <DrawerFooter>
+      <Button>Submit</Button>
+      <DrawerClose>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+
                     </Link>
             
         </div>

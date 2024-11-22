@@ -9,10 +9,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-		fontFamily:{
-			"robot":["Roboto", "sans-serif"]
-
-		},
+  		fontFamily: {
+  			'robot': ["Roboto", "sans-serif"]
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
